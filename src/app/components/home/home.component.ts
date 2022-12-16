@@ -1,30 +1,18 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, Inject, OnInit } from "@angular/core";
 import { RxState } from "@rx-angular/state";
-import { tap } from "rxjs/operators";
-import { BeerService } from "src/app/common/services";
-import { HomeState } from "src/app/common/states";
+import { GlobalBeerState, GLOBAL_BEER_STATE, HomeState } from "src/app/common/states";
 
 @Component({
     selector: 'flaschenpost-home',
     templateUrl: './home.component.html',
-    styleUrls: ['./home.component.html'],
-    providers: [RxState],
+    styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit{
 
-    public beers$ = this.state.select('beers').pipe(
-        tap(x => console.log('data came...'))
-    );
+    public beersToShow$ = this.globalState.select('allBeers');
 
-    constructor(
-        private readonly beerService: BeerService, 
-        private readonly state: RxState<HomeState>  ){}
+    constructor(@Inject(GLOBAL_BEER_STATE) private globalState: RxState<GlobalBeerState>){}
     
-    ngOnInit(): void {   
-        this.state.hold(
-            this.beerService.getAllBeer$().pipe(
-                tap(result => this.state.set({ beers: result }))                
-            )
-        );  
+    ngOnInit(): void {                   
     }    
 }

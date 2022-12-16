@@ -1,6 +1,12 @@
-<nav class="navbar bg-light">
+<nav class="navbar custom-header">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">flashenpost.de by Aleksander Dymshyts</a>
+    <span class="navbar-text mb-0 h1 custom-brand">flashenpost.de by Aleksander Dymshyts</span>
+  </div>
+</nav>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <div class="container-fluid justify-content-center">  
+    <button type="button" class="btn custom-btn" (click)="onSortClick()">Sort</button>
+    <button type="button" class="btn custom-btn" (click)="onFilterClick()">Filter</button>     
   </div>
 </nav>
 <router-outlet></router-outlet>

@@ -1,0 +1,16 @@
+// @import "../styles.scss";
+
+.centered-content {
+    display: flex; 
+    justify-content: center;
+    background-color: lightgray;
+}
+
+.card-img {
+    width: 2vw;
+    height: 12vh;
+    background-size: cover;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 50%;
+  }

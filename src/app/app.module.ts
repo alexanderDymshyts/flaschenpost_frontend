@@ -8,6 +8,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HomeComponent } from "./components/home/home.component";
 import { BeerService } from "./common/services";
+import { GlobalBeerState, GLOBAL_BEER_STATE } from "./common/states";
+import { RxState } from "@rx-angular/state";
 
 
 
@@ -23,6 +25,7 @@ import { BeerService } from "./common/services";
   ],
   providers: [
     BeerService,
+    { provide: GLOBAL_BEER_STATE, useFactory: ()=> new RxState<GlobalBeerState>() },
   ],
   bootstrap: [AppComponent]
 })
