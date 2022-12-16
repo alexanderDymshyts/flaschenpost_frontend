@@ -6,11 +6,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
+import { HomeComponent } from "./components/home/home.component";
+import { BeerService } from "./common/services";
 
 
 
 @NgModule({
   declarations: [
+    HomeComponent,
     AppComponent
   ],
   imports: [
@@ -18,7 +21,9 @@ import { AppComponent } from './app.component';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    BeerService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
