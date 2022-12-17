@@ -1,17 +1,17 @@
 @import "../styles.scss";
 
 .custom-header {        
-    background-color: $pink-600;
+    background-color: $headerBackgroundColor;
 }
 
 .custom-brand {
-    color: whitesmoke;
+    color: $textColor;
 }
 
 .custom-btn {
-    color: whitesmoke;
+    color: $textColor;
 }
 
 .custom-btn:hover {
-    color: $pink-600;
+    color: $headerBackgroundColor;
 }

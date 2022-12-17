@@ -1,16 +1,29 @@
-// @import "../styles.scss";
-
 .centered-content {
     display: flex; 
     justify-content: center;
-    background-color: lightgray;
+    background-color: lightgrey;
 }
 
-.card-img {
-    width: 2vw;
-    height: 12vh;
-    background-size: cover;
-    margin-top: 5%;
-    margin-bottom: 5%;
-    margin-left: 50%;
-  }
+.custom-centered-card-content{
+    text-align: right; 
+    align-self: center;
+    width:fit-content;
+}
+
+.custom-card-img {
+    margin:15px;
+    align-self: center;
+    max-height:200px; 
+}
+
+.custom-card-text{    
+    margin: 15px;
+    color: whitesmoke;
+    font-weight: bold;
+}
+
+.custom-card {
+    border-radius: 15px;
+    margin: 15px; 
+    background-color: rgb(7, 180, 238);
+}

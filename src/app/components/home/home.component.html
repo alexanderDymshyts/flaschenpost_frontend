@@ -1,4 +1,4 @@
-<ul class="nav nav-tabs bg-dark" role="tablist" style="height: fit-content;">
+<ul class="nav nav-tabs bg-dark" role="tablist">
     <li class="nav-item" role="presentation">
       <button class="nav-link active" id="standard" data-bs-toggle="tab" data-bs-target="#standart-pane" type="button" role="tab" aria-controls="standart-pane" aria-selected="true">Standard View
       </button>
@@ -9,27 +9,42 @@
     </li>  
 </ul>
 <div class="tab-content centered-content"> 
-    <div class="tab-pane fade show active" id="standart-pane" role="tabpanel" aria-labelledby="standard" tabindex="0">
-        <div *ngIf="beersToShow$ | async as beersToShow">
-            <div *ngFor="let beer of beersToShow">
-                <div class="card mb-3" style="margin: 15px; background-color: lightblue;">
-                    <div class="row no-gutters">
-                      <div class="col-md-4">
-                        <img src="{{beer.imageUrl}}" alt="{{beer.name}}" class="card-img">
-                      </div>
-                      <div class="col-md-8">
-                        <div class="card-body">                          
-                          <p class="card-text">{{ beer.name }}</p>  
-                          <p class="card-text">{{ beer.price }} {{ beer.currency }}</p>
-                          <p class="card-text">{{ beer.description }}</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>               
+  <div class="tab-pane fade show active" id="standart-pane" role="tabpanel" aria-labelledby="standard" tabindex="0">
+    <div *ngIf="beersToShow$ | async as beersToShow">
+      <div *ngFor="let beer of beersToShow">  
+        <div class="card custom-card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-4">                
+                <img src="{{beer.imageUrl}}" class="img-fluid rounded custom-card-img" alt="Beer"> 
+              </div>
+              <div class="col-sm-8" class="custom-centered-card-content">
+                <p class="card-text custom-card-text">
+                  {{ beer.name }} <br>
+                  {{ beer.price }} {{ beer.currency }} <br>
+                  {{ beer.description }}
+                </p>
+              </div>    
             </div>
-        </div>
+          </div>       
+        </div>    
+      </div>         
     </div>
-    <div class="tab-pane fade" id="alternative-pane" role="tabpanel" aria-labelledby="alternative" tabindex="1">
-        Content for: 1
-    </div>  
-</div>
+  </div>
+  
+  <div class="tab-pane fade" id="alternative-pane" role="tabpanel" aria-labelledby="alternative" tabindex="1">
+    <div *ngIf="beersToShow$ | async as beersToShow">
+      <div class="container-fluid">
+        <div class="card custom-card">
+          <div class="card-body">
+            <div class="row" >  
+              <div class="col-lg-2 col-md-3 col-sm-4 col-6" *ngFor="let beer of beersToShow"> 
+                <img src="{{beer.imageUrl}}" class="img-fluid rounded custom-card-img" alt="Beer">   
+              </div>   
+            </div>
+          </div>
+        </div>        
+      </div>   
+    </div>   
+  </div>  
+</div> 
