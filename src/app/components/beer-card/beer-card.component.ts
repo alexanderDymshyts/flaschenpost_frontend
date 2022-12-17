@@ -6,15 +6,12 @@ import { BeerCardState } from "src/app/common/states";
 @Component({
     selector: 'flaschenpost-beer-card',
     templateUrl: './beer-card.component.html',
-    styleUrls: ['./beer-card.component.scss'],
-    providers: [RxState],
+    styleUrls: ['./beer-card.component.scss']
 })
-export class BeerCardComponent{
+export class BeerCardComponent extends RxState<BeerCardState>{
     @Input() set beer(incomingBeer: Beer) {
-        this.state.set({ beer: incomingBeer});
+        this.set({ beer: incomingBeer});
     }
 
-    public beer$ = this.state.select('beer');    
-
-    constructor(private readonly state: RxState<BeerCardState>){}
+    public beer$ = this.select('beer'); 
 }
