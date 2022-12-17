@@ -1,23 +1,2 @@
-.custom-card {
-    border-radius: 15px;
-    margin: 15px; 
-    background-color: rgb(7, 180, 238);
-}
+@import "../home/home.component.scss";
 
-.custom-card-img {
-    margin:15px;
-    align-self: center;
-    max-height:200px; 
-}
-
-.custom-centered-card-content{
-    text-align: right; 
-    align-self: center;
-    width:fit-content;
-}
-
-.custom-card-text{    
-    margin: 15px;
-    color: whitesmoke;
-    font-weight: bold;
-}
