@@ -1,5 +1,5 @@
 import { Beer } from "../models";
 
 export interface HomeState {
-    beersToShow: Beer[];
+    // in bigger classes here would be something for sure!
 }

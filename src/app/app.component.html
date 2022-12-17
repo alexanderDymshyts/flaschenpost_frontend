@@ -5,8 +5,50 @@
 </nav>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
   <div class="container-fluid justify-content-center">  
-    <button type="button" class="btn custom-btn" (click)="onSortClick()">Sort</button>
-    <button type="button" class="btn custom-btn" (click)="onFilterClick()">Filter</button>     
+    <button type="button" class="btn custom-btn"  data-bs-toggle="modal" data-bs-target="#sortModal">Sort</button>
+    <button type="button" class="btn custom-btn" data-bs-toggle="modal" data-bs-target="#filterModal">Filter</button>     
   </div>
 </nav>
 <router-outlet></router-outlet>
+
+<!-- Modals -->
+<div class="modal fade" id="filterModal" tabindex="-1" aria-labelledby="filterModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="filterModalLabel">Filter</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        1. To get filtered data from backend, please use Filter button. <br>
+        2. To get filtered data from cache, please use Filter (cache) button. (Only visible if cache is not empty). <br>
+        3. To clear filtered data cache, please use Clear button.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="onFilterClick()">Filter</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="onFilterCacheClick()" *ngIf="isFilteredCacheVisible$ | async">Filter (cache)</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="onFilterCacheClearClick()" *ngIf="isFilteredCacheVisible$ | async">Clear</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="sortModal" tabindex="-1" aria-labelledby="sortModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="sortModalLabel">Sort</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="onSortClick()">Sort Asc</button>
+        <button type="button" class="btn btn-primary" (click)="onSortClick()">Sort Desc</button>
+      </div>
+    </div>
+  </div>
+</div>
