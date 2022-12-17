@@ -16,7 +16,7 @@
           <div class="card-body">
             <div class="row">
               <div class="col-sm-4">                
-                <img src="{{beer.imageUrl}}" class="img-fluid rounded custom-card-img" alt="Beer"> 
+                <img src="{{beer.imageUrl}}" class="img-fluid rounded custom-card-img"> 
               </div>
               <div class="col-sm-8" class="custom-centered-card-content">
                 <p class="card-text custom-card-text">
@@ -39,7 +39,10 @@
           <div class="card-body">
             <div class="row" >  
               <div class="col-lg-2 col-md-3 col-sm-4 col-6" *ngFor="let beer of beersToShow"> 
-                <img src="{{beer.imageUrl}}" class="img-fluid rounded custom-card-img" alt="Beer">   
+                <figure class="figure">
+                  <img src="{{beer.imageUrl}}" class="img-fluid rounded custom-card-img"> 
+                  <figcaption class="figure-caption text-center">{{ beer.price }} {{ beer.currency }}</figcaption>
+                </figure>                  
               </div>   
             </div>
           </div>
