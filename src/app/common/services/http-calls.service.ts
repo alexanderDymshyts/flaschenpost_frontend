@@ -11,7 +11,7 @@ import { environment } from "src/app/environments/environment";
 
     constructor(private httpClient: HttpClient) { }
     
-    public getAll$(path: string): Observable<any>{
+    public get$(path: string): Observable<any>{
         return this.httpClient.get(this.apiUrl + path);
     }
   }  
