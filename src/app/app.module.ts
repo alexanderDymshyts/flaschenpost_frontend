@@ -10,11 +10,13 @@ import { HomeComponent } from "./components/home/home.component";
 import { BeerService } from "./common/services";
 import { GlobalBeerState, GLOBAL_BEER_STATE } from "./common/states";
 import { RxState } from "@rx-angular/state";
+import { BeerCardComponent } from "./components/beer-card/beer-card.component";
 
 
 
 @NgModule({
   declarations: [
+    BeerCardComponent,
     HomeComponent,
     AppComponent
   ],

@@ -1,0 +1,16 @@
+<div class="card custom-card" *ngIf="beer$ | async as beer">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-4">                
+          <img src="{{beer.imageUrl}}" class="img-fluid rounded custom-card-img"> 
+        </div>
+        <div class="col-sm-8" class="custom-centered-card-content">
+          <p class="card-text custom-card-text">
+            {{ beer.name }} <br>
+            {{ beer.price }} {{ beer.currency }} <br>
+            {{ beer.description }}
+          </p>
+        </div>    
+      </div>
+    </div>       
+</div> 
