@@ -7,8 +7,8 @@
 .custom-centered-card-content{
     text-align: right; 
     align-self: center;
-    width:fit-content;
-    min-width: 60%;
+    max-width: 60%;    
+    word-break: break-word;
 }
 
 .custom-card-img {
@@ -28,3 +28,23 @@
     margin: 15px; 
     background-color: rgb(7, 180, 238);
 }
+
+// Mobile
+@media (max-width: 768px){
+    .custom-centered-card-content{
+        text-align: left; 
+        align-self: center;
+        max-width:150px;
+        word-break: break-word;
+    }    
+  }
+
+  // Tab device
+@media (max-width: 992px){
+    .custom-centered-card-content{
+        text-align: left; 
+        align-self: center;
+        max-width:300px;
+        word-break: break-word;
+    }   
+  }
