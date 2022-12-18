@@ -25,3 +25,13 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## My own notes
+
+Sorry, i did not write any tests for this test project.
+
+Frontend is pretty simple, so to make project more interesting I've added RxState. I made one global state und two controllers with local and global states.
+
+Also I've added some cashing example. And yes, every time to show modals is not the best desision, I know.
+
+I've reviewed design and made small chages. I am designer, I see it this way :) 
