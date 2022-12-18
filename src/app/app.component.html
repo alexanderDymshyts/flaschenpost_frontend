@@ -22,7 +22,7 @@
       <div class="modal-body">
         1. To get filtered data from backend, please use Filter button. <br>
         2. To get filtered data from cache, please use Filter (cache) button. (Only visible if cache is not empty). <br>
-        3. To clear filtered data cache, please use Clear button.
+        3. To clear filtered data cache and see all beers, please use Clear button.
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -42,12 +42,19 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        ...
+        1. To get sorted asc data from backend, please use Asc button. <br>
+        2. To get sorted asc data from cache, please use Asc (cache) button. (Only visible if cache is not empty). <br>
+        3. To get sorted desc data from backend, please use Desc button. <br>
+        4. To get sorted desc data from cache, please use Desc (cache) button. (Only visible if cache is not empty). <br>
+        5. To clear sorted data cache and see all beers, please use Clear button.
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" (click)="onSortClick()">Sort Asc</button>
-        <button type="button" class="btn btn-primary" (click)="onSortClick()">Sort Desc</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="onSortAscClick()">Asc</button>        
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="onSortAscCacheClick()" *ngIf="isSortedAscCacheVisible$ | async">Asc (Cache)</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="onSortDescClick()">Desc</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="onSortDescCacheClick()" *ngIf="isSortedDescCacheVisible$ | async">Desc (Cache)</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="onSortCacheClearClick()" *ngIf="isSortedClearCacheVisible$ | async">Clear</button>
       </div>
     </div>
   </div>
