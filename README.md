@@ -34,4 +34,6 @@ Frontend is pretty simple, so to make project more interesting I've added RxStat
 
 Also I've added some cashing example. And yes, every time to show modals is not the best desision, I know.
 
+It's nice to have error interceptor to catch errors from backend. 
+
 I've reviewed design and made small chages. I am designer, I see it this way :) 
